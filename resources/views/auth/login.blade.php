@@ -32,6 +32,13 @@
             </label>
         </div>
 
+        <a href="{{ route('google-login') }}" style="text-decoration: none;">
+        <div style="display: inline-flex; align-items: center; background-color: #fff; color: #444; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; font-family: Roboto, sans-serif; font-size: 14px; cursor: pointer;">
+            <img src="https://developers.google.com/identity/images/g-logo.png" style="width:20px; height:20px; margin-right:10px;" alt="Google logo">
+            <span>Sign in with Google</span>
+        </div>
+        </a>
+
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
