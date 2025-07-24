@@ -73,7 +73,12 @@ class GoogleAuthController extends Controller
             }
         } catch (\Throwable $th) {
             // Handle the error
-            dd('Error occurred during Google authentication: ' . $th->getMessage());
+            dd([
+                'message' => $th->getMessage(),
+                'line' => $th->getLine(),
+                'file' => $th->getFile(),
+                'trace' => $th->getTraceAsString()
+            ]);
         }
     }
 }
