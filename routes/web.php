@@ -18,7 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/auth/google', [GoogleAuthController::class, 'redirectToSpecificSocialMediaPage'])->name('google-login');
-Route::get('/auth/google/call-back', [GoogleAuthController::class, 'callBackFunToSpecificSocialMediaAuthPage'])->name('google-callback');
+Route::get('/auth/redirect/{provider}', [GoogleAuthController::class, 'redirectToSpecificSocialMediaPage'])->name('authRedirect');
+
+Route::get('/auth/call-back/{provider}', [GoogleAuthController::class, 'callBackFunToSpecificSocialMediaAuthPage'])->name('authCallback');
 
 require __DIR__.'/auth.php';
